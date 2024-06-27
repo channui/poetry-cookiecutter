@@ -1,0 +1,21 @@
+# Mac cruft
+.DS_Store
+
+# Editor Cruft
+~*
+*~
+.*.sw*
+
+# Database
+*.sqlite
+*.db
+
+# Python cruft
+*.pyc
+__pycache__
+
+# IDE cruft
+/.idea
+
+# Poetry lock file (actually DO add this if wanting to have specific pinned environments available)
+poetry.lock

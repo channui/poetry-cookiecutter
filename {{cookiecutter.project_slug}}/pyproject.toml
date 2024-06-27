@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = ""
+authors = ["Christopher Chan-Nui <channui@tiny.org>"]
+readme = "README.md"
+packages = [{include = "{{cookiecutter.project_slug}}", from = "src"}]
+classifiers = [
+    "Private :: Do not Upload",
+    "License :: Other/Proprietary License",
+    "Development Status :: 2 - Pre-Alpha",
+]
+keywords = ["testing", "private"]
+license = "SEE LICENSE IN LICENSE.txt"
+
+[tool.poetry.scripts]
+{{cookiecutter.project_slug}} = "{{cookiecutter.project_slug}}.__main__:main"
+
+[tool.poe.tasks]
+test = "pytest"
+pyroma = "pyroma ."
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.12.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-mock = "^3.14.0"
+poethepoet = "^0.26.1"
+pyroma = "^4.2"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "src"
+]
+addopts = [
+    "--import-mode=importlib",
+]
